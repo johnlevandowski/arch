@@ -4,7 +4,8 @@ Arch Installation
 virt-manager setup
 ------------------
 
-Overview > Firmware = UEFI x86_64  
+Overview > Firmware = UEFI  
+CPU > Topology > Manually set  
 
 
 archinstall Installation
@@ -50,18 +51,35 @@ makepkg -si
 Limine Snapper
 --------------
 
+```
 paru -S limine-snapper-sync limine-mkinitcpio-hook
-
 sudo micro /etc/mkinitcpio.conf
-add the sd-btrfs-overlayfs hook after the filesystems hook (btrfs-overlays in VM)
+```
 
+Add btrfs-overlayfs hook after the filesystems hook  
+
+```
 sudo micro /etc/default/limine
+```
 
-ESP_PATH=
+```
+ESP_PATH="/boot"
 BOOT_ORDER="*, *lts, *fallback, Snapshots"
+MAX_SNAPSHOT_ENTRIES=auto
+```
 
+```
 limine-update
+```
 
-add //Snapshots at bottom of /boot/limine.conf
+```
+sudo micro /boot/limine.conf  
+```
 
+Add //Snapshots at bottom of Arch linux block  
+
+```
+sudo snapper create
 limine-snapper-sync
+sudo systemctl enable --now limine-snapper-sync.service
+```
