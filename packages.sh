@@ -2,6 +2,7 @@
 
 pacman -S \
 7zip \
+amd-ucode \
 ark \
 btrfs-assistant \
 cups foomatic-db foomatic-db-engine print-manager system-config-printer \
@@ -19,7 +20,7 @@ libreoffice-fresh \
 plasma-disks \
 qalculate-qt \
 rclone \
-ttf-hack-nerd \
+ttf-fantasque-nerd \
 --needed
 
 pacman -Qq \

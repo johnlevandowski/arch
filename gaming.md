@@ -2,10 +2,11 @@ Gaming
 ======
 
 ```
-sudo pacman -S steam lib32-vulkan-radeon --needed
+sudo pacman -S steam lib32-vulkan-radeon lact --needed
+paru -S curseforge --needed
+flatpak install com.vysp3r.ProtonPlus
 ```
 
-Proton Plus flatpak
 
 
 Performance Optimizations
