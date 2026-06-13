@@ -37,14 +37,17 @@ Change default user and root password "test" with passwd
 
 ```
 git clone https://github.com/johnlevandowski/arch $HOME/Documents/GitHub/arch
-sudo cp $HOME/Documents/GitHub/arch/files/etc/snapper/configs/root /etc/snapper/configs/
-sudo cp $HOME/Documents/GitHub/arch/files/etc/NetworkManager/conf.d/20-connectivity.conf /etc/NetworkManager/conf.d/
-rate-mirrors --protocol https arch | sudo tee /etc/pacman.d/mirrorlist
+
+.$HOME/Documents/GitHub/arch/firstboot.sh
+
+sudo micro /etc/samba/.smbcredentials
+
+.$HOME/Documents/GitHub/arch/mounts.sh
 ```
 
 
-Paru Installation
------------------
+Paru
+----
 
 ```
 git clone https://aur.archlinux.org/paru.git
@@ -99,16 +102,6 @@ sudo journalctl -k -r -g "UFW"
 sudo ufw logging off
 sudo ufw status verbose
 ```
-
-
-Mounts
-------
-
-```
-cd $HOME/Documents/GitHub/cachyos/mounts/
-```
-
-https://github.com/johnlevandowski/cachyos/tree/main/mounts  
 
 
 Packages
