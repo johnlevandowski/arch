@@ -4,18 +4,17 @@ Arch Installation
 virt-manager setup
 ------------------
 
-Overview > Firmware = UEFI  
-CPU > Topology > Manually set  
+* Overview > Firmware = UEFI
+* CPU > Topology > Manually set
 
 
-archinstall Installation
-------------------------
+archinstall
+-----------
 
 ```
 pacman -Sy archinstall git --needed
 git clone https://github.com/johnlevandowski/arch
-cd arch
-./archinstall.sh
+./arch/archinstall.sh
 ```
 
 * Disk configuration > Partitioning > Use a best-effort default partition layout > btrfs > compress > zstd
@@ -35,6 +34,8 @@ First Boot
 Change default user and root password "test" with passwd  
 
 ```
+git clone https://github.com/johnlevandowski/arch $HOME/Documents/GitHub/arch
+sudo cp $HOME/Documents/GitHub/arch/files/etc/snapper/configs/root /etc/snapper/configs/
 rate-mirrors --protocol https arch | sudo tee /etc/pacman.d/mirrorlist
 ```
 
@@ -48,6 +49,7 @@ cd paru
 makepkg -si
 ```
 
+
 Limine Snapper
 --------------
 
@@ -59,16 +61,7 @@ sudo micro /etc/mkinitcpio.conf
 Add btrfs-overlayfs hook after the filesystems hook  
 
 ```
-sudo micro /etc/default/limine
-```
-
-```
-ESP_PATH="/boot"
-BOOT_ORDER="*, *lts, *fallback, Snapshots"
-MAX_SNAPSHOT_ENTRIES=auto
-```
-
-```
+sudo cp $HOME/Documents/GitHub/arch/files/etc/default/limine /etc/default/
 limine-update
 ```
 
@@ -83,3 +76,12 @@ sudo snapper create
 limine-snapper-sync
 sudo systemctl enable --now limine-snapper-sync.service
 ```
+
+
+Arch Update
+-----------
+
+```
+paru -S arch-update
+systemctl --user enable --now arch-update-tray.service
+---

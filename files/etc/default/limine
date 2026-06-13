@@ -1,0 +1,3 @@
+ESP_PATH="/boot"
+BOOT_ORDER="*, *lts, *fallback, Snapshots"
+MAX_SNAPSHOT_ENTRIES=auto

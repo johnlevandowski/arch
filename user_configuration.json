@@ -52,6 +52,7 @@
     "ntp": true,
     "packages": [
         "alacritty",
+        "konsole",
         "fish",
         "git",
         "base-devel",
