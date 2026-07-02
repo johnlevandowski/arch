@@ -58,6 +58,7 @@
         "base-devel",
         "firefox",
         "micro",
+		"rate-mirrors"
         "snap-pac"
     ],
     "pacman_config": {
