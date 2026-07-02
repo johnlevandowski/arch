@@ -55,10 +55,10 @@
         "konsole",
         "fish",
         "git",
+		"less",
         "base-devel",
         "firefox",
         "micro",
-		"rate-mirrors",
         "snap-pac"
     ],
     "pacman_config": {

@@ -114,9 +114,20 @@ Packages
 sudo $HOME/Documents/GitHub/arch/packages.sh
 ```
 
+
+GnuCash
+-------
+
 ```
 mkdir -p /home/john/Documents/gnucash
 cp /mnt/rpi5/Documents/gnucash/finances.gnucash /home/john/Documents/gnucash/
+```
+
+
+Rclone
+------
+
+```
 rclone config touch
 ```
 
