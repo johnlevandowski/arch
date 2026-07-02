@@ -11,12 +11,13 @@ virt-manager setup
 archinstall
 -----------
 
-[Arch Linux ISO 2026.06.01](https://archlinux.org/download/)
+[Arch Linux ISO 2026.07.01](https://archlinux.org/download/)
 
 ```
 pacman -Sy archinstall git --needed
 git clone https://github.com/johnlevandowski/arch
-./arch/archinstall.sh
+cd arch
+./archinstall.sh
 ```
 
 * Disk configuration > Partitioning > Use a best-effort default partition layout > btrfs > compress > zstd
@@ -38,7 +39,9 @@ Change default user and root password "test" with passwd
 ```
 git clone https://github.com/johnlevandowski/arch $HOME/Documents/GitHub/arch
 
-.$HOME/Documents/GitHub/arch/firstboot.sh
+cd $HOME/Documents/GitHub/arch
+
+./firstboot.sh
 
 sudo micro /etc/samba/.smbcredentials
 
@@ -75,7 +78,7 @@ limine-update
 sudo micro /boot/limine.conf  
 ```
 
-Add //Snapshots at bottom of Arch linux block  
+Add //Snapshots at bottom of Arch linux block (may be done automacally now)  
 
 ```
 sudo snapper create
@@ -108,7 +111,7 @@ Packages
 --------
 
 ```
-sudo /mnt/rpi5/Documents/Linux/arch/packages.sh
+sudo $HOME/Documents/GitHub/arch/packages.sh
 ```
 
 ```
@@ -123,6 +126,7 @@ AUR Packages
 
 ```
 pacman -Qmi
+github-desktop
 ```
 
 

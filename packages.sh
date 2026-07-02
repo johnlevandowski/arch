@@ -13,7 +13,7 @@ eza \
 fastfetch \
 filelight \
 gimp libheif \
-github-cli github-desktop \
+github-cli \
 gnome-disk-utility \
 gnucash libdbi-drivers \
 libreoffice-fresh \
