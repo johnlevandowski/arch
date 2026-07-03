@@ -72,15 +72,6 @@ Add btrfs-overlayfs hook after the filesystems hook
 ```
 sudo cp $HOME/Documents/GitHub/arch/files/etc/default/limine /etc/default/
 limine-update
-```
-
-```
-sudo micro /boot/limine.conf  
-```
-
-Add //Snapshots at bottom of Arch linux block (may be done automacally now)  
-
-```
 sudo snapper create
 limine-snapper-sync
 sudo systemctl enable --now limine-snapper-sync.service

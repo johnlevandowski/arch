@@ -52,13 +52,14 @@
     "ntp": true,
     "packages": [
         "alacritty",
-        "konsole",
-        "fish",
-        "git",
-		"less",
         "base-devel",
         "firefox",
+        "fish",
+        "git",
+        "konsole",
+		"less",
         "micro",
+		"pacman-contrib",
         "snap-pac"
     ],
     "pacman_config": {
