@@ -2,14 +2,12 @@
 
 pacman -S \
 7zip \
-amd-ucode \
 ark \
 btrfs-assistant \
 cups foomatic-db foomatic-db-engine print-manager system-config-printer \
 distrobox podman podman-compose \
 dolphin \
 dust \
-eza \
 fastfetch \
 filelight \
 gimp libheif \

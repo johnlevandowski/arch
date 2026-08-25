@@ -91,6 +91,7 @@ sudo ufw status verbose
 ## Packages
 
 ```
+sudo pacman -S amd-ucode
 sudo $HOME/Documents/GitHub/arch/packages.sh
 ```
 
