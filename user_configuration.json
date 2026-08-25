@@ -51,10 +51,8 @@
     },
     "ntp": true,
     "packages": [
-        "alacritty",
         "base-devel",
         "firefox",
-        "fish",
         "git",
         "konsole",
 		"less",

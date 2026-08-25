@@ -4,12 +4,11 @@ Arch Installation
 virt-manager setup
 ------------------
 
-* Overview > Firmware = UEFI
+* Overview > Firmware = UEFI (OVMF_CODE.fd in fedora)
 * CPU > Topology > Manually set
 
 
-archinstall
------------
+## archinstall
 
 [Arch Linux ISO 2026.07.01](https://archlinux.org/download/)
 
@@ -22,6 +21,9 @@ cd arch
 
 * Disk configuration > Partitioning > Use a best-effort default partition layout > btrfs > compress > zstd
 * Disk configuration > Btrfs Snapshots > Snapper
+* Profile > Type > Desktop = KDE Plasma
+* Profile > Graphics Driver = AMD / ATI (open-source)
+* Profile > Greeter = Plasma Login Manager
 * Install > Yes
 * Exit archinstall
 
@@ -31,8 +33,8 @@ reboot
 ```
 
 
-First Boot
-----------
+## First Boot
+
 
 Change default user and root password "test" with passwd  
 
@@ -49,8 +51,7 @@ sudo micro /etc/samba/.smbcredentials
 ```
 
 
-Paru
-----
+## Paru
 
 ```
 git clone https://aur.archlinux.org/paru.git
@@ -59,8 +60,7 @@ makepkg -si
 ```
 
 
-Limine Snapper Sync
--------------------
+## Limine Snapper Sync
 
 ```
 paru -S limine-snapper-sync limine-mkinitcpio-hook
@@ -78,17 +78,7 @@ sudo systemctl enable --now limine-snapper-sync.service
 ```
 
 
-Arch Update
------------
-
-```
-paru -S arch-update
-systemctl --user enable --now arch-update-tray.service
-```
-
-
-Firewall
---------
+## Firewall
 
 ```
 sudo ufw status verbose
@@ -98,16 +88,14 @@ sudo ufw status verbose
 ```
 
 
-Packages
---------
+## Packages
 
 ```
 sudo $HOME/Documents/GitHub/arch/packages.sh
 ```
 
 
-GnuCash
--------
+## GnuCash
 
 ```
 mkdir -p /home/john/Documents/gnucash
@@ -115,16 +103,14 @@ cp /mnt/rpi5/Documents/gnucash/finances.gnucash /home/john/Documents/gnucash/
 ```
 
 
-Rclone
-------
+## Rclone
 
 ```
 rclone config touch
 ```
 
 
-AUR Packages
-------------
+## AUR Packages
 
 ```
 pacman -Qmi
@@ -132,8 +118,7 @@ github-desktop
 ```
 
 
-System Settings
----------------
+## System Settings
 
 https://github.com/johnlevandowski/dotfiles#restore-dotfiles-from-git-repository  
 
@@ -163,8 +148,7 @@ Panel > Bluetooth Icon > Enable Bluetooth = OFF
 * Session > On login, launch apps that were open = Start with an empty session  
 
 
-Printer
--------
+## Printer
 
 ```
 sudo systemctl enable cups.socket
